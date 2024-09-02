@@ -1,0 +1,160 @@
+/*
+  CST8215_331 Assignment 2
+  Author:  Wen Qian
+  creat the database,creat the table and constrainsts
+*/
+
+create table departments
+(
+	ID int,
+	name varchar(50),
+	manager_first_name varchar (50),
+	manager_last_name varchar(50),
+	constraint pk_department_ID primary key (ID)
+);
+
+create table suppliers
+(
+	ID int,
+	contact_person_First_Name varchar(50),
+	contact_person_Last_Name varchar(50),
+	phone_number char(15),
+	name varchar(100),
+	email varchar (100),
+	constraint pk_suppier_ID primary key (ID)
+);
+
+create table doctors
+(
+	ID int,
+	first_name varchar(50),
+	last_name varchar(45),
+	license_number int,
+	email varchar(100),
+	phone_number varchar(50),
+	province varchar(25),
+	city varchar(25),
+	street varchar(45),
+	post_code varchar(7),
+        department_ID int not null,
+	constraint PK_doctor_ID primary key (ID),
+        constraint FK_department_ID foreign key (department_ID) references departments(id)
+);
+
+create table patients
+(
+	ID int,
+	first_name varchar(50),
+	last_name varchar(45),
+	phone_number char (15),
+	email varchar(100),
+	gender varchar(10),
+	date_of_birth date,
+	province varchar(25),
+	city varchar(30),
+	street varchar(45),
+	post_code varchar(7),
+	ohip_number char(18),
+	insurance_number char(20),
+	insurance_provider varchar(50),
+	constraint pk_patient_ID primary key (id)
+);
+
+create table medications
+(
+	DIN int,
+	name varchar(50),
+	price decimal(8,2),
+	quantity int,
+	manufacture_date date,
+	expire_date date,
+        Supplier_ID int not null ,
+	constraint pk_medication_DIN primary key (DIN),
+        constraint FK_supplier_ID foreign key (supplier_ID) references suppliers(id)
+);
+
+
+
+create table equipments
+(
+	id int,
+	name varchar(100),
+	warranty_due_date date,
+	manufacture varchar(100),
+	type varchar(50),
+	date_of_make date,
+        department_ID int,
+        supplier_ID int,
+	constraint pk_equipment_id primary key (id),
+        constraint FK_equipment_department_ID foreign key (department_ID) references departments(id),
+        constraint FK_equipment_supplier_ID foreign key (supplier_ID) references suppliers(id)
+);
+
+
+
+create table appointments
+	(
+	Doctor_ID int not null,
+	Patient_ID int  not null,
+	Number int unique not null, 
+	Date date,
+	time time,
+	constraint PK_doctor_patient_number primary key (doctor_ID, patient_id, number),
+	constraint FK_doctor_id foreign key (doctor_ID) references doctors(id),
+	constraint FK_patient_id foreign key (patient_ID)references patients(id)
+);
+	
+
+create table invoices
+	(
+	number int not null unique,
+	payment_method varchar(50),
+	date date,
+	appointment_Number int not null unique,	
+	amount decimal(8,2),
+	constraint PK_invoices_Number primary key (number),
+	constraint fk_invoices_appointment_number foreign key (appointment_number) references appointments (number)
+);
+
+
+create table prescriptions
+(
+	RX int not null unique ,
+	date date,
+	doctor_ID int not null ,
+	patient_id int not null, 
+	constraint PK_Prescriptions_RX primary key (rx),
+	constraint FK_Prescriptions_Doctor_ID foreign key (doctor_ID) references doctors (ID),
+	constraint FK_Prescriptions_patients_ID foreign key (patient_ID) references patients (ID)
+);
+
+create table prescription_medication_Orders
+(
+	order_number int not null unique,
+	prescription_RX int,
+	start_date date,
+	end_date date, 
+	quantities int,
+	refill varchar(50),
+	medications_DIN int,
+    check (start_date < end_date),
+	constraint PK_prescription_medication_Orders_number primary key (order_number, prescription_RX),
+	constraint FK_prescription_medication_Order_Medication_DIN foreign key (prescription_RX) references prescriptions (RX)
+);
+
+create table examinations
+(
+	ID int not null unique,
+	date date,
+	equipment_ID int not null,
+	patient_ID int not null,
+	doctor_ID int not null,
+	constraint PK_examinations_ID primary key (id),
+	constraint FK_examinations_Doctor_ID foreign key (doctor_id) references doctors(id),
+	constraint FK_examinations_patient_ID foreign key (patient_id) references patients(id),
+	constraint FK_examinations_equipment_ID foreign key (equipment_id) references equipments(id)
+);
+
+
+
+

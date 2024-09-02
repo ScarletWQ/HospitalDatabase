@@ -1,0 +1,260 @@
+/*
+  CST8215_331 Assignment 2
+  Author: Wen Qian Zhu
+  Insert the test date to all the tables.
+  create this date by hand and a tool online.
+*/
+
+INSERT INTO departments (id,name,manager_first_name, manager_last_name)
+VALUES
+  (01,'Radiology','Tanek','Webb'),
+  (02,'physiotherapy','Judith','Mitchell'),
+  (03,'elderly_service','Julie','Rosario'),
+  (04,'obstetrics','Jackson','Vargas'),
+  (05,'diagnositc_imaging','Isabelle','Baldwin'),
+  (06, 'Cardiology', 'John', 'Doe'),
+  (07, 'Neurology', 'Jane', 'Smith'),
+  (08, 'Orthopedics', 'Michael', 'Johnson'),
+  (09, 'Laboratory', 'Emily', 'Brown'),
+  (10, 'Oncology', 'David', 'Martinez');
+
+
+INSERT INTO doctors (id,first_name,last_name,license_number,email,phone_number,Province,city,street,post_code,department_id)
+VALUES
+  (100,'Veronica','Ewing',89563489,'aliquam@yahoo.ca','(243) 939-8578','ON','Kanata','P.O. Box 877, 7397 Posuere, Road','445437','1'),
+  (101,'Katelyn','Case',89562478,'at@yahoo.ca','(969) 718-6327','ON','Orleans','4942 Mi Street','67782','2'),
+  (102,'Reagan','Spence',25698365,'tellus.faubus@outlook.couk','1-711-178-5804','ON','Gloucester','7508 Consectetuer','76838','3'),
+  (103,'Madonna','Ellison',89654137,'vestibum.nec@icloud.com','(875) 858-2652','ON','Greely','Ap #428-7844 Sed Street','922312','3'),
+  (104,'Inga','Larsen',89541793,'accum.laoreet@outlook.org','1-815-837-6367','ON','Kanata','4633 Porttitor Street','55878','4'),
+  (105,'Stuart','Norman',78325915,'quis.turpis@google.edu','(472) 178-4616','ON','Barrhaven','995-9477 Ac, Avenue','08615','5'),
+  (106,'Rooney','Herrera',19336256,'donec@google.com','(874) 981-1685','ON','Barrhaven','248-1634 Morbi Rd.','26866','1'),
+  (107,'Nigel','Dillard',91339118,'turpis.nec@aol.net','1-748-206-3172','ON','Kanata','972-615 Donec St.','4136','2'),
+  (108,'Tucker','Diaz',88623124,'sollicidin.a@protonmail.ca','(736) 854-6310','ON','Greely','Ap #112-5362 Lorem Rd.','67161','3'),
+  (109,'Yoshio','Brennan',48758189,'consuat@outlook.couk','(113) 483-8407','QC','Gatineau','101-9671 Mi St.','7318','4'),
+  (110,'Regan','Cruz','05258356','cursus@icloud.net','(447) 232-3593','qc','gatineau','Ap #548-6572 Sed Rd.','34184','3'),
+  (111,'Scarlet','Ewing','17038635','massa.lobortis@icloud.net','1-334-750-6195','on','barrhaven','741A, St.','478935','2'),
+  (112,'Maxwell','Jacobson','825029159','a.dui.cras@protonmail.org','1-545-530-0336','qc','gatineau','1550 Torquent St.','73-798','4'),
+  (113,'Chantale','Fry','58931567','lacus.quisque@hotmail.couk','(366) 198-0367','on','barrhaven','3832 Metus Street','4247','5'),
+  (114,'Phelan','Clarke','45032394','ornare.elit@outlook.net','(257) 661-0044','on','barrhaven','483-4235 Non St.','7146','4'),
+  (115,'Paki','Blake','53651970','consequat.auctor@yahoo.org','(724) 585-3662','on','ottawa','325 Tempus St.','45721','3'),
+  (116,'Galena','Mercer','43336637','eleifend.vitae@hotmail.net','(216) 315-0653','qc','gatineau','2309 Turpis Rd.','O4R7K4','2'),
+  (117,'Velma','Hancock','84394271','vitae@yahoo.net','1-615-692-4820','on','ottawa','411-3954 Tempus Street','6023SG','1'),
+  (118,'Axel','Solomon','88674765','at.sem@icloud.com','(422) 523-7481','on','ottawa','862-2870 Aenean St.','AO8T2RU','4'),
+  (119,'Minerva','Walters','78580581','mollis.integer@icloud.com','(581) 382-2212','on','ottawa','8439 Libero Rd.','14952','3');
+
+INSERT INTO suppliers (id,contact_person_first_name,contact_person_last_name,phone_number,name,email)
+VALUES
+  (1,'Rogan','Oneal','1-413-369-4873','The Betty Mills Company (BettyMills.com)','mi.ac.mattis@yahoo.com'),
+  (2,'Jemima','Cardenas','1-245-626-6880','Walter Stern, Inc.','nullam.enim@hotmail.com'),
+  (3,'Palmer','Koch','1-204-493-8740','Quail Electronics','mauris.molestie@protonmail.couk'),
+  (4,'Nicholas','Gray','1-635-262-5510','High Energy Corp.','placerat.velit@outlook.couk'),
+  (5,'Ray','Gross','1-874-624-5731','Broward A & C Medical Supply','parturient.montes.nascetur@google.org'),
+  (6,'Briar','Johnson','1-678-245-8327','NewAge Industries, Inc.','arcu.ac@protonmail.com'),
+  (7,'Magee','Collins','1-516-761-5954','Specialty Glass Products','facilisis.eget.ipsum@yahoo.org'),
+  (8,'Brent','Jensen','1-658-483-7214','Associated Bag','mi.tempor@icloud.com'),
+  (9,'Illana','Wells','1-213-470-2659','Emco Industrial Plastics, Inc.','a.auctor@protonmail.ca'),
+  (10,'Bree','Rivas','1-249-702-7663','Hudson Technologies','cras.dictum.ultricies@protonmail.edu');
+
+INSERT INTO equipments (id,Name,warranty_due_date,manufacture,type,date_of_make,department_id,supplier_id)
+VALUES
+  (1,'X-ray','Jun 1, 2027','turpis egestas. Aliquam fringilla','Diagnostic','Apr 14, 2016',1,2),
+  (2,'MRI','Oct 31, 2034','viverra. Donec tempus,','Diagnostic','Nov 13, 2021',1,3),
+  (3,'echocardiography','Nov 7, 2025','ac urna.','Diagnostic','Aug 15, 2016',1,3),
+  (4,'infusion pumps','Nov 11, 2034','sit amet ante. Vivamus','Treatment_Equipment','Jan 31, 2018',2,4),
+  (5,'medical laser','May 7, 2031','Nullam vitae diam.','Treatment_Equipment','Apr 16, 2019',2,5),
+  (6,'X-ray','Mar 24, 2032','malesuada vel,','Diagnostic','Mar 17, 2019',1,6),
+  (7,'CT scan','Jan 24, 2031','vehicula.','Diagnostic','Feb 7, 2022',1,7),
+  (8,'Ultrasound','Jun 30, 2028','Donec','Diagnostic','Jul 14, 2018',1,8),
+  (9,'LASIK Surgical machines','Apr 16, 2032','Phasellus nulla.','Treatment_Equipment','Sep 12, 2016',2,4),
+  (10,'dialysis machine','Apr 18, 2032','et','life_support','Sep 13, 2018',2,4);
+
+INSERT INTO patients (id,first_name,last_name,phone_number,email,gender,date_of_birth,province,city,street,post_code,ohip_number,insurance_number,insurance_provider)
+VALUES
+  (100,'Xavier','Pena','1-145-838-8850','pede.et@hotmail.edu','F','Jun 23, 1946','ON','Orleans','205-2882 Dolor Rd.','56B 6E9',15680123,12087043,'SunLife'),
+  (101,'Kyle','Tanner','1-544-694-6543','lacus.pede@hotmail.com','F','Mar 30, 1925','QC','Almonte','P.O. Box 377, 5699 Ut, Av.','26E 1E5',7839644,11746673,'SunLife'),
+  (102,'Pandora','Matthews','1-399-683-9139','diam.duis@protonmail.net','F','Nov 5, 1936','ON','Kanata','4208 Orci, Rd.','B8S 7Y0',43668646,12913628,'CanadaLife'),
+  (103,'Florence','Vasquez','1-832-911-7140','ac.tellus@aol.edu','M','Jun 2, 1954','ON','Ottawa','Ap #996-2998 Amet St.','j8S 1B2',11935066,10265121,'SunLife'),
+  (104,'Lyle','Mooney','1-573-970-7542','donec.est@icloud.couk','M','Nov 3, 2002','QC','Barrhaven','9752 Velit Avenue','B8M 2P7',66289472,2419629,'CanadaLife'),
+  (105,'Oren','Nielsen','1-884-771-7354','aliquam.gravida.mauris@yahoo.ca','F','Feb 26, 2019','QC','Gatineau','738-3696 Cras Ave','M3A 8X5',72994005,10884881,'CanadaLife'),
+  (106,'Valentine','ONeill','1-962-351-7449','mauris.sit@google.org','F','Mar 24, 2002','QC','Kanata','8453 Metus. Street','P2T 4N7',42192382,18551858,'SunLife'),
+  (107,'Wilma','Duke','1-747-118-8870','elit@protonmail.org','M','Jun 13, 1956','ON','Barrhaven','Ap #490-7947 Fringilla St.','43C 4G1',32427870,1122795,'SunLife'),
+  (108,'Tate','Workman','1-654-622-4818','aliquet.lobortis@outlook.edu','M','Jun 16, 1956','QC','Gloucester','Ap #646-1625 Sagittis St.','L4R 0E6',18305998,8417179,'SunLife'),
+  (109,'Noah','Jarvis','1-557-458-5856','magna.praesent@icloud.org','F','Nov 14, 1940','QC','Greely','789-8689 Eu Rd.','W5Z 9V5',28341916,15092487,'CanadaLife'),
+  (110,'Stephen','Hood','1-865-875-5708','semper.tellus.id@google.ca','M','Jan 5, 1969','QC','Almonte','5654 Adipiscing, St.','Y3P 3H8',48328210,8989754,'SunLife'),
+  (111,'Elliott','Ballard','1-462-711-3567','mauris.aliquam@icloud.couk','F','Feb 6, 1944','QC','Greely','830-6351 Per St.','84C 6K4',6137323,7230112,'SunLife'),
+  (112,'Lance','Compton','1-353-380-8772','proin.eget@yahoo.ca','M','Mar 29, 2023','QC','Kemptville','214-4602 Lorem. Street','E4S 8Y4',13811916,18272814,'SunLife'),
+  (113,'Victor','Rice','1-514-667-5613','fermentum.metus@yahoo.net','M','May 10, 2021','ON','Gloucester','562-2221 In, Avenue','R3S 0K7',49657586,11469022,'CanadaLife'),
+  (114,'Ross','Lloyd','1-885-406-7367','convallis@hotmail.org','F','Jan 11, 2004','QC','Greely','3001 Proin Street','S3E 6Y1',3674158,4194006,'SunLife'),
+  (115,'Marcia','Mullins','1-876-639-2141','adipiscing.elit@protonmail.com','M','Apr 28, 1980','QC','Kemptville','764-3085 Malesuada St.','T2N 5H0',24618362,11462256,'CanadaLife'),
+  (116,'Stephanie','Mays','1-762-454-1626','a@yahoo.edu','F','Jul 30, 1947','QC','Winchester','263-5564 Vitae, Ave','I8B 9J7',25504203,18135270,'CanadaLife'),
+  (117,'Perry','Maynard','1-846-890-1086','sagittis.lobortis@protonmail.org','F','Apr 30, 1982','ON','Almonte','275-6887 Ornare. Road','K0Y 8Y8',28915920,4695031,'CanadaLife'),
+  (118,'Amir','Bender','1-543-562-4624','eros.proin@outlook.couk','M','Jan 19, 1999','QC','Rockland','Ap #991-6745 Fusce Av.','A1E 8K1',17416648,17926433,'SunLife'),
+  (119,'Sandra','Whitney','1-638-971-3035','sed.dolor@aol.couk','F','Dec 12, 1988','QC','Rockland','Ap #460-3219 Orci Rd.','B2T 5H9',15601826,7585292,'SunLife'),
+  (120,'Lars','Hewitt','1-627-581-5201','vitae.mauris.sit@aol.ca','F','Sep 30, 1959','ON','Kanata','P.O. Box 476, 8626 Molestie Rd.','62X 3G6',59757560,3334641,'SunLife'),
+  (121,'Armando','Benton','1-173-616-3817','rhoncus.donec@protonmail.net','F','Jan 31, 1997','QC','Gatineau','861-2104 Ut St.','91V 4T3',3084043,18531334,'SunLife'),
+  (122,'Ursa','Maxwell','1-399-773-2664','nisi.magna@yahoo.net','F','Sep 9, 1935','ON','Rockland','681-111 Id Rd.','L7E 1P3',63486920,17365025,'CanadaLife'),
+  (123,'Kathleen','Sandoval','1-825-401-5133','vehicula.et@outlook.net','M','Jan 6, 1999','QC','Barrhaven','419-1585 Augue Avenue','A7G 3P6',29101717,17767636,'SunLife'),
+  (124,'Damian','Mathews','1-866-168-2621','ullamcorper.duis@hotmail.couk','M','Jun 14, 1927','QC','Rockland','P.O. Box 611, 7416 Vel Ave','J5A 0B5',2594512,458631,'CanadaLife'),
+  (125,'Dahlia','Montgomery','1-446-842-8182','non.quam@hotmail.net','M','Jun 10, 1930','ON','Kemptville','Ap #639-2856 Eros. St.','S5X 2S3',74501182,13698553,'CanadaLife'),
+  (126,'Illiana','Skinner','1-724-787-2611','eu@hotmail.edu','F','Mar 24, 1965','QC','Gatineau','1599 Turpis Av.','Y0L 8W3',42525611,8064610,'SunLife'),
+  (127,'Kay','Cline','1-617-571-7959','pellentesque.habitant@google.edu','M','Oct 12, 1904','ON','Greely','553-2153 Nullam St.','R1T 8T9',26108599,8315939,'SunLife'),
+  (128,'Kessie','Fisher','1-595-440-8382','ultrices@aol.couk','F','May 21, 1981','QC','Gloucester','Ap #915-5239 Aliquam Av.','15L 7E3',78446085,1222568,'CanadaLife'),
+  (129,'Cally','Camacho','1-968-147-5578','luctus.sit.amet@yahoo.org','M','Jan 3, 1945','QC','Gatineau','803-423 Nunc Av.','T8B 4J7',9352601,15369109,'CanadaLife'),
+  (130,'Whilemina','Robles','1-620-255-2368','ante@hotmail.net','M','Apr 16, 1922','QC','Almonte','Ap #839-5836 Quam, Street','32R 2V3',32825581,6100928,'SunLife'),
+  (131,'Scott','Wolf','1-777-487-0478','aliquet.sem.ut@google.org','F','Apr 3, 1920','ON','Kemptville','767-8814 Est Ave','R1H 4B3',54967184,5592884,'CanadaLife'),
+  (132,'Iona','Ray','1-822-303-2269','maecenas.malesuada@yahoo.edu','F','Apr 23, 2001','ON','Barrhaven','P.O. Box 832, 6838 Nascetur Road','H7R 7G5',12973597,12275942,'CanadaLife'),
+  (133,'Kyle','Harper','1-923-514-4718','vestibulum.ante.ipsum@yahoo.org','F','Apr 22, 1997','ON','Greely','4494 Massa Street','R3Y 6L0',22656564,3239721,'CanadaLife'),
+  (134,'Hilel','Mcclain','1-563-728-5232','nunc.in@aol.ca','M','Mar 12, 1981','ON','Gatineau','Ap #904-4856 Et St.','R4B 6G0',24902224,19564763,'CanadaLife'),
+  (135,'Rhoda','Hayden','1-224-815-3694','donec@google.edu','F','Feb 17, 1947','QC','Almonte','8799 Maecenas Rd.','N2N 5M5',41529518,3944117,'SunLife'),
+  (136,'Cassandra','Davidson','1-720-308-8586','varius.orci@google.ca','M','Jul 31, 1901','ON','Greely','233 Sagittis. St.','S2J 6K7',60625928,10895684,'CanadaLife'),
+  (137,'Tamekah','Sears','1-317-282-7948','tortor.dictum@icloud.com','M','Nov 7, 1917','ON','Almonte','Ap #196-5244 Gravida St.','A0L 3X1',56304417,12476740,'SunLife'),
+  (138,'Matthew','Gilliam','1-431-463-9559','amet.nulla@protonmail.net','F','Jan 31, 2015','ON','Gatineau','751-220 Nulla Avenue','R8Y 3H8',42685972,12944715,'CanadaLife'),
+  (139,'Zahir','Mccullough','1-318-859-1464','dapibus.id@protonmail.org','M','Jun 19, 1943','ON','Almonte','1194 Amet Rd.','L3K 8C3',4126345,5552475,'CanadaLife');
+
+INSERT INTO medications (din,name,price,quantity,manufacture_date,expire_date,supplier_id)
+VALUES
+  (5388721,'Metoprolol',73.48,103,'Aug 22, 2022','Mar 14, 2027',9),
+  (4323823,'Pepcid',17.56,151,'Oct 29, 2021','Jun 4, 2025',9),
+  (1908251,'Pantoprazole',6.22,1,'Apr 25, 2023','Apr 14, 2027',8),
+  (3203037,'Zantac',98.18,312,'May 21, 2023','Jan 24, 2026',8),
+  (7518645,'Levoxyl,',23.07,27,'Nov 5, 2022','Apr 2, 2027',6),
+  (6191581,'(Ventolin',49.14,204,'Apr 8, 2021','Nov 7, 2024',7),
+  (5038066,'Famotidine',37.10,480,'Jun 6, 2022','Sep 22, 2025',5),
+  (6898457,'(Synthroid,',35.99,257,'Jan 26, 2022','Sep 11, 2024',5),
+  (2603514,'(Lopressor)',11.00,434,'Mar 27, 2021','Oct 19, 2024',4),
+  (4592299,'Prednisone',92.18,457,'Dec 10, 2023','Mar 2, 2026',5),
+  (5284635,'Proair',58.30,169,'Aug 13, 2023','Aug 7, 2026',4),
+  (6439491,'Benzonatate',97.32,456,'May 17, 2022','May 10, 2025',10),
+  (2742927,'acid',21.78,53,'Aug 27, 2021','Nov 11, 2024',10),
+  (2323009,'tartrate',18.11,144,'Sep 7, 2023','Aug 24, 2025',4),
+  (3383734,'Phenobarbital',36.11,264,'Mar 10, 2024','Sep 7, 2027',5),
+  (5364673,'Biomox,',79.71,262,'Jun 7, 2023','May 29, 2027',2),
+  (5889589,'Polymox)',2.10,298,'Feb 23, 2024','Jan 16, 2026',1),
+  (5015345,'(Augmentin)',18.32,34,'Dec 14, 2023','Feb 18, 2026',5),
+  (1420242,'(Ambien)',45.54,108,'Jul 10, 2023','Oct 8, 2024',1),
+  (5790242,'Gabapentin',63.31,132,'Jul 19, 2021','Jan 21, 2026',3),
+  (2560574,'Thyroid',41.90,39,'Nov 16, 2022','May 20, 2027',2),
+  (5930937,'(Ambien)',37.51,186,'Mar 31, 2023','Jan 23, 2026',7),
+  (6885953,'(Bromfed',67.06,462,'Jan 9, 2024','Dec 26, 2025',4),
+  (6946032,'Metformin',31.48,414,'May 17, 2023','Mar 9, 2026',10),
+  (1432374,'Freestyle',7.01,283,'Oct 5, 2023','Jul 9, 2026',5),
+  (5325998,'Tadalafil',97.69,241,'Mar 10, 2023','May 21, 2026',9),
+  (7718043,'Bromphen/pseudoephedrine/dextromethorphan',6.46,454,'Sep 12, 2021','Jan 23, 2025',9),
+  (4354149,'citrate',17.69,19,'Oct 29, 2022','Oct 2, 2025',6),
+  (829730,'Amoxicillin',21.50,448,'Nov 12, 2023','Jan 10, 2026',1),
+  (5812143,'Methylprednisolone',24.61,271,'Dec 3, 2023','Sep 30, 2024',3);
+
+INSERT INTO appointments(doctor_id,patient_id,number,date,time)
+VALUES
+  (100,100,10,'Feb 9, 2024','9:53 AM'),
+  (101,106,1,'Feb 4, 2024','9:12 AM'),
+  (101,109,2,'Jan 19, 2024','12:14 PM'),
+  (103,108,3,'Dec 1, 2023','1:48 PM'),
+  (104,138,4,'Dec 25, 2023','10:01 AM'),
+  (105,128,5,'Nov 3, 2023','8:52 AM'),
+  (109,121,6,'Sep 10, 2023','2:33 PM'),
+  (108,108,7,'Jan 25, 2023','10:07 AM'),
+  (119,137,8,'Nov 18, 2023','12:29 PM'),
+  (108,111,9,'Feb 7, 2024','8:29 AM'),
+  (100,100,100,'Apr 9, 2024','9:53 AM'),
+  (101,106,101,'Feb 4, 2025','9:12 AM'),
+  (101,109,102,'Dec 19, 2024','12:14 PM'),
+  (103,108,103,'Dec 1, 2024','1:48 PM'),
+  (104,138,104,'Dec 25, 2024','10:01 AM'),
+  (105,128,105,'Nov 3, 2024','8:52 AM'),
+  (109,121,106,'Sep 10, 2024','2:33 PM'),
+  (108,108,107,'Jan 25, 2025','10:07 AM'),
+  (119,137,108,'Nov 18, 2024','12:29 PM'),
+  (108,111,109,'Feb 7, 2025','8:29 AM'),
+  (115,138,110,'Aug 8, 2024','2:41 PM'),
+  (119,129,111,'Dec 28, 2024','9:04 AM'),
+  (106,128,112,'Jan 6, 2025','1:45 PM'),
+  (109,137,113,'Jun 7, 2024','3:11 PM'),
+  (113,126,114,'May 18, 2024','3:27 PM'),
+  (112,115,115,'Mar 29, 2024','8:54 AM'),
+  (119,124,116,'Dec 5, 2024','1:25 PM'),
+  (105,123,117,'Aug 16, 2024','2:30 PM'),
+  (109,102,118,'Oct 18, 2024','3:09 PM'),
+  (112,131,119,'Oct 5, 2024','10:57 AM'),
+  (112,128,120,'Jun 20, 2024','11:17 AM'),
+  (115,119,121,'Mar 11, 2025','2:13 PM'),
+  (115,115,122,'Jun 6, 2024','11:16 AM'),
+  (117,127,123,'Dec 2, 2024','1:32 PM'),
+  (115,136,124,'Apr 9, 2024','1:37 PM'),
+  (118,135,125,'Nov 7, 2024','12:32 PM'),
+  (102,114,126,'May 16, 2024','9:10 AM'),
+  (117,133,127,'Jan 29, 2025','3:37 PM'),
+  (116,132,128,'Dec 3, 2024','9:51 AM'),
+  (108,131,129,'Mar 24, 2024','8:10 AM');
+
+INSERT INTO examinations (id,date,equipment_id,patient_id,doctor_id)
+VALUES
+  (200,'Sep 4, 2024',6,111,105),
+  (201,'Dec 1, 2024',5,132,103),
+  (202,'Feb 24, 2025',9,101,114),
+  (203,'Nov 3, 2024',3,122,112),
+  (204,'May 19, 2024',7,131,117),
+  (205,'Sep 20, 2024',6,110,114),
+  (206,'Apr 7, 2024',7,101,107),
+  (207,'Oct 7, 2024',4,107,115),
+  (208,'Mar 11, 2025',4,110,119),
+  (209,'Apr 18, 2024',3,125,100),
+  (210,'Apr 6, 2024',2,137,114),
+  (211,'Jul 10, 2024',5,132,109),
+  (212,'Jul 25, 2024',6,104,114),
+  (213,'Feb 18, 2025',5,113,105),
+  (214,'Apr 7, 2024',6,114,116),
+  (215,'May 2, 2024',6,132,107),
+  (216,'Sep 2, 2024',4,112,111),
+  (217,'Aug 2, 2024',6,105,108),
+  (218,'Aug 23, 2024',4,116,101),
+  (219,'Mar 20, 2024',3,126,118),
+  (220,'Aug 30, 2024',6,130,109),
+  (221,'Oct 18, 2024',4,118,119),
+  (222,'Sep 15, 2024',7,126,115),
+  (223,'Sep 22, 2024',2,133,116),
+  (224,'Mar 7, 2025',8,112,101),
+  (225,'Apr 4, 2024',6,106,108),
+  (226,'Nov 20, 2024',5,101,112),
+  (227,'Apr 15, 2024',5,101,118),
+  (228,'Jul 21, 2024',9,126,118),
+  (229,'Jul 6, 2024',4,135,115);
+
+INSERT INTO invoices (number,payment_method,date,appointment_number,amount)
+VALUES
+  (300,'4917382212256669','Oct 6, 2024',1,'2616.18'),
+  (301,'675973 955288 4598','Feb 26, 2025',2,'2528.15'),
+  (302,'305766844248425','Jul 25, 2024',3,'4101.78'),
+  (303,'6709 6866 5516 6657','Jul 22, 2024',4,'3300.69'),
+  (304,'670 96364 27132 677','Nov 27, 2024',5,'3557.21'),
+  (305,'214955477724535','Mar 6, 2025',6,'1707.27'),
+  (306,'5018633648458245','Mar 22, 2024',7,'934.97'),
+  (307,'2149 744352 53453','Sep 24, 2024',8,'3186.12'),
+  (308,'5018243723188244','Dec 15, 2024',9,'2161.44'),
+  (309,'644 26524 42421 757','Mar 2, 2025',10,'4900.81');
+
+INSERT INTO prescriptions (RX,date,doctor_id,patient_id)
+VALUES
+  (37881,'Dec 13, 2022',104,126),
+  (96125,'Mar 15, 2024',114,120),
+  (76532,'Jan 28, 2023',105,122),
+  (13381,'Apr 1, 2023',114,123),
+  (76762,'Aug 4, 2023',112,124),
+  (61,'Jun 8, 2023',112,111),
+  (77934,'Dec 18, 2022',104,104),
+  (42522,'Mar 10, 2024',101,138),
+  (17761,'May 21, 2023',108,135),
+  (40661,'May 26, 2023',113,107);
+  
+INSERT INTO prescription_medication_orders (order_number,prescription_RX,start_date,end_date,quantities,refill,medications_din)
+VALUES
+  (2837,37881,'Mar 26, 2022','Jul 15, 2022',71,1,5388721),
+  (67782,37881,'Nov 18, 2023','Apr 15, 2024',94,0,4323823),
+  (42948,96125,'Jan 4, 2024','Nov 8, 2024',75,8,1908251),
+  (77504,76532,'Jun 2, 2022','Dec 18, 2024',29,5,3203037),
+  (81190,76532,'Feb 21, 2023','Sep 18, 2024',49,1,7518645),
+  (12308,76532,'Oct 10, 2022','Jan 30, 2025',99,6,6191581),
+  (91949,13381,'Mar 4, 2023','Jun 18, 2023',37,8,5038066),
+  (91777,76762,'Nov 7, 2022','Mar 6, 2024',93,8,6898457),
+  (96818,77934,'Feb 2, 2024','Aug 28, 2024',28,2,2603514),
+  (36588,77934,'Mar 2, 2023','Nov 30, 2023',97,5,4592299);

@@ -1,0 +1,20 @@
+/*
+  CST8215_331 Assignment 2
+  Author: Wen Qian Zhu
+  create view for query 4 and 9 in the previous task.
+*/
+
+--1.A dynamic view for query 4 in the previous task
+
+create view appoinments_Patient_doctor AS
+select date, time
+from appointments
+where patient_id = 106  and doctor_id = 101;
+
+--2.A dynamic view for query 9 in the previous task
+
+create view appointment_count_doctor as
+select count (number) as appointments_Count, doctor_id from appointments
+group by doctor_id
+having count (number)>= 2
+order by doctor_id;

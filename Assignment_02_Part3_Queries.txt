@@ -1,0 +1,85 @@
+/*
+  CST8215_331 Assignment 2
+  Author: Wen Qian Zhu
+  run various test queries
+*/
+
+--1.A simple query that pulls all columns and rows from a table
+--Show all doctor information
+
+select * from doctors;
+
+--2.A query that displays a subset of columns
+--Show doctors name and department
+
+select first_name, last_name, department_id
+from doctors;
+
+--3.A query that displays a subset of columns with a single clause (predicate) WHERE statement
+--Show the name of doctors who work in department that the id is 02.
+
+select first_name, last_name, department_id
+from doctors
+where department_id = 2;
+
+--4.A query that displays a subset of columns with a multi-clause (predicate) WHERE statement using AND/OR
+--Show the date and time of appoints, where patient’sid is 106 and doctor’s id is 101.
+
+select date, time
+from appointments
+where patient_id = 106  and doctor_id = 101;
+
+
+--5.A query that performs a single table join.  In other words, you are joining 2 tables.
+--Show examination id and the equipment name the examination uses.
+
+select examinations.id as examination_id, equipments.name as equipment_name
+from examinations 
+join equipments on examinations.equipment_id = equipments.id;
+
+--6.A query that performs a multi-table join. In other words, you are joining 3 or more tables.
+--Show examinations and corresponding patient name and doctor name.
+
+select e.id, (p.first_name, p.last_name) as patient_name, (d.first_name, d.last_name) as doctor_name
+from examinations e
+join patients p on p.id = e.patient_id
+join doctors d on d.id = e.doctor_id;
+
+--7.A query that performs an aggregate (count, min, max, sum, avg, etc.).
+--calculates the minimum price among all medications stored in the 'medications' table
+
+select min(price) as min_medication_price
+from medications;
+
+--8.A query that performs an aggregate (count, min, max, sum, avg, etc.) with a GROUP BY.
+--calculates the maximun price for each supplier in the 'medications' table. It group the prices by suppliers_id
+
+select supplier_id, max(price) as max_price
+from medications
+group by supplier_id;
+
+--9.A query that performs an aggregate (count, min, max, sum, avg, etc.). with a GROUP BY and a HAVING clause
+--show the doctor_id who have more than 2 appointments, order by doctor_id
+
+select count (number) as appointments_Count, doctor_id from appointments
+group by doctor_id
+having count (number)>= 2
+order by doctor_id;
+
+
+--10.	A query that performs a subquery either as part of the WHERE clause or as a derived/virtual table.
+--Show date and doctor id of the appointments that the doctors are from department 2 (department id is 2).
+
+select  date as appointment_date, doctor_id as doctor_id
+from appointments
+where doctor_id in ( select id from doctors where department_id =2);
+
+
+--11.	A query that performs an aggregate with a join and a group by.
+--This query selects the province, gender, count of appointments, and the most recent appointment date
+--It joins the 'patients' and 'appointments' tables based on the patient ID.
+--The result is grouped by gender and province.
+
+select p.province,p.gender,count(a.number),max(a.date) as recent_visit
+from patients p join appointments a on p.id=a.patient_id
+group by p.gender,p.province;
